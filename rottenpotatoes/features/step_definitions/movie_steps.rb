@@ -20,6 +20,10 @@ end
 Then /I should see "(.*)" before "(.*)"/ do |movie1, movie2|
   page.body.index(movie1).should < page.body.index(movie2)
 end
+
+When /I press  "(.*)" on "(.*)" / do |movie|
+  Movie.destroy(movie)
+end
 # Make it easier to express checking or unchecking several boxes at once
 #  "When I uncheck the following ratings: PG, G, R"
 #  "When I check the following ratings: G"
